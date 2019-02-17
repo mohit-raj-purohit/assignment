@@ -1,0 +1,81 @@
+{
+    "cars": {
+        "name": "Huandai",
+        "desclaimer": "Vehicle images are guides only and may not reflect the model's exact specifications/features– exact specifications/features should be confirmed with the seller.",
+        "variant": [
+            {
+                "image": "images/blue.jpg",
+                "color": "#34598d",
+                "title": "Modern Blue"
+            },
+            {
+                "image": "images/grey.jpg",
+                "color": "#757472",
+                "title": "Modern Grey"
+            },
+            {
+                "image": "images/red.jpg",
+                "color": "#e70916",
+                "title": "Modern Red"
+            },
+            {
+                "image": "images/silver.jpg",
+                "color": "#adadad",
+                "title": "Modern Silver"
+            }
+        ],
+        "ratings": [
+            {
+                "type": "Critics' Ratings",
+                "percent": 87
+            },
+            {
+                "type": "Performance",
+                "percent": 64
+            },
+            {
+                "type": "Interior",
+                "percent": 90
+            },
+            {
+                "type": "Safety",
+                "percent": 44
+            },
+            {
+                "type": "Reliability",
+                "percent": 52
+            }
+        ],
+        "overallRating": {
+            "title": "Overall rating",
+            "rating": 88
+        },
+        "similarCars": [
+            {
+                "image":"images/car1.jpg",
+                "title": "Hyundai i40 Wagon",
+                "rating": 8.3
+            },
+            {
+                "image": "images/car2.jpg",
+                "title": "Holden Astra",
+                "rating": 8.3
+            },
+            {
+                "image": "images/car2.jpg",
+                "title": "Holden Astra",
+                "rating": 8.3
+            },
+            {
+                "image": "images/car2.jpg",
+                "title": "Holden Astra",
+                "rating": 8.3
+            },
+            {
+                "image": "images/car2.jpg",
+                "title": "Holden Astra",
+                "rating": 8.3
+            }
+        ]
+    }
+}

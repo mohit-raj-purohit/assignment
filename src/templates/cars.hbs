@@ -1,0 +1,84 @@
+<div class="container">
+    <div class="car-wrapper clearfix">
+        <section class="col-half-d col-full-m car-product">
+            <h2 class="heading2">Styles</h2>
+            <div class="car-image-container">
+                {{#each this.variant}}
+                    <div class="car-image js-car-image {{#if_eq @index 0}}{{else}}hidden{{/if_eq}}">
+                        <img src="{{this.image}}" alt="{{this.title}}"/>
+                    </div>
+                {{/each}}
+            </div>
+            <div class="car-bottom-b">
+                <div class="car-color-v">
+                    <ul class="car-color-v-list">
+                        {{#each this.variant}}
+                            <li class="car-color-v-listitem js-car-color-v-listitem {{#if_eq @index 0}}active{{else}}hidden{{/if_eq}}" data-index="{{@index}}" >
+                                <button class="car-color-v-b js-car-variant" style="background:{{this.color}}">{{this.color}}</button>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="car-d-wrap">
+                    <div class="car-d">
+                        {{#each this.variant}}
+                            <div class="car-d-title js-car-title {{#if_eq @index 0}}{{else}}hidden{{/if_eq}}">{{this.title}}</div>
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="car-desclaimer">
+                    <p>Vehicle images are guides only and may not reflect the model's exact specifications/features– exact specifications/features should be confirmed with the seller.</p>
+                </div>
+            </div>
+        </section>
+        <section class="col-half-d col-full-m car-product-description">
+            <h2 class="heading2">Ratings</h2>
+            <div class="car-rating-wrapper">
+                <div class="car-rating clearfix">
+                    <div class="car-rating-list">
+                        <ul>
+                        {{#each this.ratings}}
+                            <li class="car-rating-listitem">
+                                <div class="car-rating-title">{{this.type}}</div>
+                                <div class="car-rating-bar">
+                                    <div class="car-rating-bar-full">
+                                        <div class="car-rating-bar-progress car-rating js-progress-bar" data-progress="{{this.percent}}"></div>
+                                    </div>
+                                    <div class="car-rating-percent">{{this.percent}}</div>
+                                </div>
+                            </li>
+                        {{/each}}
+                        </ul>
+                        <div class="car-rating-all">
+                            <a href="#" class="car-rating-all-link">View All Ratings »</a>
+                        </div>
+                    </div>
+                    <div class="car-rating-overall">
+                        <style> @keyframes rotate-one { 100% { transform: rotate({{degreeCalculator rating=this.overallRating.rating}}deg); } } </style>
+                        <div class="car-rating-overall-inner">
+                            <div class="relative">
+                                <div class="car-rating-overall-circle relative">
+                                    <div class="car-rating-overall-background"> </div>
+                                </div>
+                                <img src="images/icon-meter.png" class="car-rating-overall-needle"> 
+                            </div>
+                            <p class="car-rating-overall-num">{{this.overallRating.rating}}</p>
+                            <p class="car-rating-overall-title">{{this.overallRating.title}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="car-similar-section clearfix">
+                {{#each this.similarCars}}
+                    <div class="car-similar">
+                        <div class="car-similar-list">
+                            <div class="car-similar-image"><img src="{{this.image}}" class="car-similar-img" alt="{{this.title}}"></div>
+                            <div class="car-similar-title">{{this.title}}</div>
+                            <div class="car-similar-rating">{{this.rating}}</div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </section>
+    </div>
+</div>

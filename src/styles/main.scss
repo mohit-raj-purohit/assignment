@@ -1,0 +1,246 @@
+@import './import';
+body {
+    font-size: $fs-16;
+    font-family: $font-family;
+}
+
+.hidden {
+    display: none;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 20px;
+}
+
+@media (min-width: 768px) {
+    .col-half-d {
+        width: 50%;
+    }
+}
+
+@media (max-width: 767px) {
+    .col-full-m {
+        width: 100%;
+    }
+}
+
+.car {
+    &-wrapper {
+        border: 1px solid $grey;
+        border-radius: 10px;
+        margin: 20px 0;
+    }
+    &-image {
+        text-align: center;
+        padding: 20px;
+        img {
+            width: 90%;
+            @media (min-width: 768px) {
+                width: 70%; 
+            }
+        }
+    }
+    &-color-v {
+        &-listitem {
+            display: inline-block;
+            border: 1px solid $grey;
+            border-radius: 50%;
+            padding: 2px;
+            &.active {
+              border: 2px solid $dark-grey;
+            }
+        }
+        &-b {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            outline: none;
+            border: none;
+            text-indent: -100000px;
+            cursor: pointer;
+        }
+    }
+    &-bottom-b {
+        text-align: center;
+    }
+    &-d-title,
+    &-desclaimer {
+        color: $font-color-grey;
+    }
+    &-d-title {
+        font-size: $fs-14;
+    }
+    &-desclaimer {
+        font-size: $fs-12;
+    }
+    &-rating {
+        &-title {
+            font-size: $fs-14;
+        }
+        &-title,
+        &-bar {
+            font-weight: bold;
+        }
+        &-list,
+        &-overall {
+            float: left;
+        }
+        &-list {
+            width: percentage(3/5);
+        }
+        &-overall {
+            width: percentage(2/5);
+            margin-top: 16px;
+            text-align: center;
+            &-circle {
+                width: 185px;
+                height: 92.5px;
+                overflow: hidden;
+                margin: 0 auto;
+                padding: 0;
+                list-style-type: none;
+                &::before {
+                    content: '';
+                    width: inherit;
+                    box-sizing: border-box;
+                    position: absolute;
+                    height: inherit;
+                    border: 13px solid $dark-yellow;
+                    border-bottom: none;
+                    border-top-left-radius: 92.5px;
+                    border-top-right-radius: 92.5px;
+                    z-index: 2;
+                    left: 0;
+                }
+            }
+            &-background {
+                top: 100%;
+                width: inherit;
+                height: inherit;
+                border: 92.5px solid;
+                border-top: none;
+                border-bottom-left-radius: 92.5px;
+                border-bottom-right-radius: 92.5px;
+                transform-origin: 50% 0;
+                backface-visibility: hidden;
+                border-color: $light-yellow;
+                left: 0;
+                z-index: 1;
+                position: absolute;
+                animation-name: rotate-one;
+                animation-duration: .4s;
+                animation-timing-function: linear;
+                animation-fill-mode: forwards;
+            }
+            &-needle {
+                transform-origin: calc(100% - 10.5px) 48%;
+                z-index: 4;
+                left: 29px;
+                bottom: -13px;
+                transform: translate(11px,48%) rotate(0deg);
+                position: absolute;
+                animation-name: rotate-one;
+                animation-duration: .4s;
+                animation-timing-function: linear;
+                animation-fill-mode: forwards;
+            }
+            &-num {
+                font-size: $fs-50;
+                margin: 18px 0 0 0;
+                font-weight: bold;
+            }
+            &-title {
+                font-weight: bold;
+                color: $font-color-grey;
+                text-transform: uppercase;
+                margin: 5px 0 0 0;
+                font-size: $fs-18;
+            }
+        }
+        &-bar {
+            position: relative;
+            padding-right: 35px;
+            &-full,
+            &-progress {
+                border-radius: 50px;
+            }
+            &-full {
+                position: relative;
+                height: 16px;
+                background-color: $light-yellow;
+                overflow: hidden;
+            }
+            &-progress {
+                height: 100%;
+                width: 0%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: $dark-yellow;
+                transition: width .4s;
+            }
+        }
+        &-listitem {
+            margin-bottom: 20px;
+        }
+        &-percent {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        &-all {
+            text-align: right;
+            &-link {
+                color: $blue;
+                font-weight: bold;
+                text-decoration: none;
+                &:hover,
+                &:focus,
+                &:active {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    &-similar {
+        width: percentage(1/2);
+        float: left;
+        text-align: center;
+        padding: 0 5px;
+        margin-top: 20px;
+        &-title {
+            font-size: $fs-11;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        &-image {
+            padding: 0 10px;
+        }
+        &-img {
+            max-width: 100%;;
+        }
+        &-list {
+            border: 1px solid $grey;
+            padding: 5px 0 0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        &-rating {
+            background: $blue;
+            color: $white;
+            font-weight: bold;
+            font-size: $fs-22;
+            padding: 3px 0;
+        }
+        @media (min-width: 768px) {
+           width: percentage(1/5); 
+        }
+    }
+}
