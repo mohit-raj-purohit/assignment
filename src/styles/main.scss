@@ -92,10 +92,16 @@ body {
             float: left;
         }
         &-list {
-            width: percentage(3/5);
+            width: 100%;
+            @media (min-width: 768px) {
+                width: percentage(3/5);
+            }
         }
         &-overall {
-            width: percentage(2/5);
+            width: 100%;
+            @media (min-width: 768px) {
+                width: percentage(2/5);
+            }
             margin-top: 16px;
             text-align: center;
             &-circle {
@@ -141,7 +147,8 @@ body {
             &-needle {
                 transform-origin: calc(100% - 10.5px) 48%;
                 z-index: 4;
-                left: 29px;
+                left: 52%;
+                margin-left: -100px;
                 bottom: -13px;
                 transform: translate(11px,48%) rotate(0deg);
                 position: absolute;
